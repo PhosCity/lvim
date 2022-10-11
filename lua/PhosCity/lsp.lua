@@ -9,6 +9,7 @@ lvim.builtin.treesitter.ensure_installed = {
 	"css",
 	"yaml",
 	"json",
+	"org",
 }
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
