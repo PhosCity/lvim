@@ -17,3 +17,4 @@ lvim.builtin.alpha.dashboard.section.footer.val = ""
 
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.termguicolors = true -- set term gui colors (most terminals support this)

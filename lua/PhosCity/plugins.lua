@@ -87,7 +87,12 @@ lvim.plugins = {
 	{
 		"ja-ford/delaytrain.nvim",
 		config = function()
-			require("delaytrain").setup()
+			require("delaytrain").setup({
+				grace_period = 2,
+				keys = { -- Which keys (in which modes) should be delayed
+					["nv"] = { "h", "j", "k", "l" },
+				},
+			})
 		end,
 	},
 
