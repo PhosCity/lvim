@@ -110,11 +110,3 @@ lvim.builtin.which_key.mappings["t"] = {
 	h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 }
-
-lvim.builtin.which_key.mappings["z"] = {
-	name = "Zen Mode",
-	a = { "<cmd>TZAtaraxis<cr>", "Ataraxis" },
-	f = { "<cmd>TZFocus<cr>", "Focus" },
-	m = { "<cmd>TZMinimalist<cr>", "Minimalist" },
-	n = { "<cmd>TZNarrow<cr>", "Narrow" },
-}

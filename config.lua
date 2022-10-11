@@ -5,5 +5,4 @@ require("PhosCity.lsp")
 
 -- Plugins setup
 require("PhosCity.whichkey")
-require("PhosCity.truezen")
 require("PhosCity.catppuccin")

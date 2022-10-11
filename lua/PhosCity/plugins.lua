@@ -1,6 +1,5 @@
 lvim.plugins = {
 	"leafo/moonscript-vim",
-	"Pocco81/true-zen.nvim",
 	"p00f/nvim-ts-rainbow",
 
 	-- Colorscheme
@@ -17,6 +16,7 @@ lvim.plugins = {
 		end,
 	},
 
+	-- folke
 	{
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
@@ -27,6 +27,12 @@ lvim.plugins = {
 		event = "BufRead",
 		config = function()
 			require("todo-comments").setup()
+		end,
+	},
+	{
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup()
 		end,
 	},
 
