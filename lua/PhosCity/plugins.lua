@@ -9,13 +9,6 @@ lvim.plugins = {
 		run = ":CatppuccinCompile",
 	},
 
-	{
-		"j-hui/fidget.nvim",
-		config = function()
-			require("fidget").setup()
-		end,
-	},
-
 	-- folke
 	{
 		"folke/trouble.nvim",
@@ -36,7 +29,15 @@ lvim.plugins = {
 		end,
 	},
 
+	-- Misc
 	{ "ggandor/lightspeed.nvim", event = "BufReadPost" },
+
+	{
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup()
+		end,
+	},
 
 	{
 		"karb94/neoscroll.nvim",
@@ -115,6 +116,7 @@ lvim.plugins = {
 		end,
 	},
 
+	-- Ass
 	{
 		"arch1t3cht/ass.nvim",
 		ft = { "ass" },

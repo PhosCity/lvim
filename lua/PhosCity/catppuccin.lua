@@ -5,11 +5,11 @@ end
 
 vim.g.catppuccin_flavour = "macchiato"
 
--- When running pywal, a script changes only the background color to what pywal generates by using following override
+-- When running pywal, a script changesthe background color only to what pywal generates by using following override
 catppuccin.setup({
 	color_overrides = {
 		all = {
-			base = "#09080c",
+			base = "#12121a",
 		},
 	},
 })
