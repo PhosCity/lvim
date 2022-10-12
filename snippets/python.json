@@ -44,11 +44,11 @@ io.save()
   "effect": {
     "prefix": "effect",
     "body": [
-"ln.start_time = line.start_time + {}
-ln.end_time = line.end_time + {}
+"ln.start_time = line.start_time + $1
+ln.end_time = line.end_time + $2
 ln.duration = ln.end_time - ln.start_time
 
-ln.text = (\"{}%s\") % (
+ln.text = (\"$3%s\") % (
   syl.text,
 )
 io.write_line(ln)"
