@@ -4,6 +4,10 @@
       {
         "language": "python",
         "path": "./python.json"
+      },
+      {
+        "language": "moon",
+        "path": "./moon.json"
       }
     ]
   }

@@ -1,0 +1,32 @@
+{
+  "func": {
+    "prefix": "func",
+    "body": [
+"$1 = ($2) ->
+  $3"
+    ],
+    "description": "function"
+  },
+  "aegi": {
+    "prefix": "aegi",
+    "body": [
+"export script_name = \"$1\"
+export script_description = \"$2\"
+export script_version = \"0.0.1\"
+export script_author = \"PhosCity\"
+export script_namespace = \"phos.$3\"
+
+$4"
+    ],
+    "description": "template for aegi scripts"
+  },
+  "depctrl": {
+    "prefix": "depctrl",
+    "body": [
+"
+DependencyControl = require \"l0.DependencyControl\"\r\ndepctrl = DependencyControl{\r\n  feed: \"\",\r\n  {\r\n  }\r\n}\r\nLineCollection, ASS = depctrl\\\\requireModules!\r\nlogger = depctrl\\\\getLogger!\r\n\r\n$1
+"
+    ],
+    "description": "template for dependecny control"
+  }
+}
