@@ -24,9 +24,114 @@ $4"
     "prefix": "depctrl",
     "body": [
 "
-DependencyControl = require \"l0.DependencyControl\"\r\ndepctrl = DependencyControl{\r\n  feed: \"\",\r\n  {\r\n  }\r\n}\r\nLineCollection, ASS = depctrl\\\\requireModules!\r\nlogger = depctrl\\\\getLogger!\r\n\r\n$1
+DependencyControl = require \"l0.DependencyControl\"\ndepctrl = DependencyControl{\n  feed: \"\",\n  {\n  }\n}\nLineCollection, ASS = depctrl\\\\requireModules!\nlogger = depctrl\\\\getLogger!\n\n$1
 "
     ],
     "description": "template for dependecny control"
+  },
+  "register": {
+    "prefix": "register",
+    "body": [
+      "depctrl\\\\registerMacro $1"
+    ],
+    "description": "register macros"
+  },
+  "registermacros": {
+    "prefix": "registermacros",
+    "body": [
+      "depctrl\\\\registerMacros({\n	{ \"$1\", \"$2\", $3 },\n})"
+    ],
+    "description": "register macros"
+  },
+  "list": {
+    "prefix": "list",
+    "body": [
+      "$1 = { $2 }"
+    ],
+    "description": "list"
+  },
+  "table": {
+    "prefix": "table",
+    "body": [
+      "$1 = {\n $2: $3\n $4\n}"
+    ],
+    "description": "table"
+  },
+  "ipairs": {
+    "prefix": "ipairs",
+    "body": [
+      "for index, item in ipairs $1\n  $2"
+    ],
+    "description": "ipairs like lua"
+  },
+  "ipairs2": {
+    "prefix": "ipairs2",
+    "body": [
+      "for item in *$1\n  $2"
+    ],
+    "description": "iparis when index is not needed"
+  },
+  "pairs": {
+    "prefix": "pairs",
+    "body": [
+      "for key, value in pairs $1\n  $2"
+    ],
+    "description": "pairs like lua"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while $1\n  $2"
+    ],
+    "description": "while loop"
+  },
+  "continue": {
+    "prefix": "conif",
+    "body": [
+      "continue if $1"
+    ],
+    "description": "continue if condition"
+  },
+  "continue2": {
+    "prefix": "conun",
+    "body": [
+      "continue unless $1"
+    ],
+    "description": "continue unless condition"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if $1\n  $2"
+    ],
+    "description": "if condition"
+  },
+  "ifelse": {
+    "prefix": "ifelse",
+    "body": [
+      "if $1\n  $2\nelse\n  $3"
+    ],
+    "description": "if condition else"
+  },
+  "ifelseif": {
+    "prefix": "ifelseif",
+    "body": [
+      "if $1\n  $2\nelseif\n  $3"
+    ],
+    "description": "if condition elseif condition"
+  },
+  "unless": {
+    "prefix": "unless",
+    "body": [
+      "unless $1\n  $2"
+    ],
+    "description": "unless condition"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch $1\n  when $2"
+    ],
+    "description": "switch"
   }
 }
