@@ -1,6 +1,9 @@
 lvim.plugins = {
-	"leafo/moonscript-vim",
 	"p00f/nvim-ts-rainbow",
+	{
+		"leafo/moonscript-vim",
+		ft = { "moon" },
+	},
 
 	-- Colorscheme
 	{
@@ -59,7 +62,7 @@ lvim.plugins = {
 	},
 
 	{
-		"norcalli/nvim-colorizer.lua",
+		"NvChad/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup({
 				filetypes = {
