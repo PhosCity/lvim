@@ -2,44 +2,60 @@
   "func": {
     "prefix": "func",
     "body": [
-      "$1 = ($2) ->\n  $3"
+      "${1:name} = (${2:parameters}) ->",
+      "\t$0"
     ],
     "description": "function"
   },
   "aegi": {
     "prefix": "export",
     "body": [
-      "export script_name = \"${1:copy}\"\nexport script_description = \"$2\"\nexport script_version = \"0.0.1\"\nexport script_author = \"PhosCity\"\nexport script_namespace = \"$4phos.$1\"\n\n$5"
+      "export script_name = \"${1:script_name}\"",
+      "export script_description = \"$2\"",
+      "export script_version = \"0.0.1\"",
+      "export script_author = \"PhosCity\"",
+      "export script_namespace = \"phos.$4${1:namespace}\"",
+      "",
+      "$0"
     ],
     "description": "template for aegi scripts"
   },
   "depctrl": {
     "prefix": "depctrl",
     "body": [
-"
-DependencyControl = require \"l0.DependencyControl\"\ndepctrl = DependencyControl{\n  feed: \"\",\n  {\n  }\n}\nLineCollection, ASS = depctrl\\\\requireModules!\nlogger = depctrl\\\\getLogger!\n\n$1
-"
+      "DependencyControl = require \"l0.DependencyControl\"",
+      "depctrl = DependencyControl{",
+      "\tfeed: \"\",",
+      "\t{",
+      "\t}",
+      "}",
+      "LineCollection, ASS = depctrl\\\\requireModules!",
+      "logger = depctrl\\\\getLogger!",
+      "",
+      "$0"
     ],
     "description": "template for dependecny control"
   },
   "register": {
     "prefix": "register",
     "body": [
-      "depctrl\\\\registerMacro $1"
+      "depctrl\\\\registerMacro $0"
     ],
     "description": "register macros"
   },
   "registermacros": {
     "prefix": "registermacros",
     "body": [
-      "depctrl\\\\registerMacros({\n	{ \"$1\", \"$2\", $3 },\n})"
+      "depctrl\\\\registerMacros({",
+      "\t{ \"${1:name}\", \"${2:description}\", ${3:function} },",
+      "})"
     ],
     "description": "register macros"
   },
   "list": {
     "prefix": "list",
     "body": [
-      "$1 = { $2 }"
+      "${1:name} = { $0 }"
     ],
     "description": "list"
   },
@@ -51,79 +67,92 @@ DependencyControl = require \"l0.DependencyControl\"\ndepctrl = DependencyContro
     "description": "table"
   },
   "ipairs": {
-    "prefix": "ipairs",
+    "prefix": "for...ipairs",
     "body": [
-      "for index, item in ipairs $1\n  $2"
+      "for ${1:index}, ${2:value} in ipairs ${3:table}",
+      "\t$0"
     ],
     "description": "ipairs like lua"
   },
   "ipairs2": {
-    "prefix": "ipairs2",
+    "prefix": "for...*table",
     "body": [
-      "for item in *$1\n  $2"
+      "for ${1:index} in *${2:table}",
+      "\t$0"
     ],
     "description": "iparis when index is not needed"
   },
   "pairs": {
-    "prefix": "pairs",
+    "prefix": "for...pairs",
     "body": [
-      "for key, value in pairs $1\n  $2"
+      "for ${1:key}, ${2:value} in pairs ${3:table}",
+      "\t$0"
     ],
     "description": "pairs like lua"
   },
   "while": {
     "prefix": "while",
     "body": [
-      "while $1\n  $2"
+      "while ${1:true}",
+      "\t$0"
     ],
     "description": "while loop"
   },
   "continue": {
-    "prefix": "conif",
+    "prefix": "continue...if",
     "body": [
-      "continue if $1"
+      "continue if ${0:condition}"
     ],
     "description": "continue if condition"
   },
   "continue2": {
-    "prefix": "conun",
+    "prefix": "continue...unless",
     "body": [
-      "continue unless $1"
+      "continue unless ${0:condition}"
     ],
     "description": "continue unless condition"
   },
   "if": {
     "prefix": "if",
     "body": [
-      "if $1\n  $2"
+      "if ${1:condition}",
+      "\t$0"
     ],
     "description": "if condition"
   },
   "ifelse": {
-    "prefix": "ifelse",
+    "prefix": "if...else",
     "body": [
-      "if $1\n  $2\nelse\n  $3"
+      "if ${1:condition}",
+      "\t$2",
+      "else",
+      "\t$0"
     ],
     "description": "if condition else"
   },
   "ifelseif": {
-    "prefix": "ifelseif",
+    "prefix": "if...elseif",
     "body": [
-      "if $1\n  $2\nelseif\n  $3"
+      "if ${1:condition}",
+      "\t$2",
+      "elseif ${3:condition}",
+      "\t$0"
     ],
     "description": "if condition elseif condition"
   },
   "unless": {
     "prefix": "unless",
     "body": [
-      "unless $1\n  $2"
+      "unless ${1:condition}",
+      "\t$0"
     ],
     "description": "unless condition"
   },
   "switch": {
     "prefix": "switch",
     "body": [
-      "switch $1\n  when $2"
+      "switch $1",
+      "\twhen $0"
     ],
     "description": "switch"
   }
