@@ -2,56 +2,56 @@
   "pyon": {
     "prefix": "pyon",
     "body": [
-"from pyonfx import Ass, Convert, FrameUtility, Line, Utils
-
-io = Ass(\"ktime.ass\")
-meta, styles, lines = io.get_data()
-
-
-def romaji(io: Ass, line: Line, ln: Line) -> None:
-    for syl in Utils.all_non_empty(line.syls):
-        pass$1
-        # Lead in
-
-        # Main Effect
-
-        # Leadout
-
-
-def sub(io: Ass, line: Line, ln: Line) -> None:
-    for syl in Utils.all_non_empty(line.syls):
-        pass
-        # Lead in
-
-        # Main Effect
-
-        # Leadout
-
-
-for line in lines:
-    # Generating lines
-    if line.styleref.alignment >= 7:
-        romaji(line, line.copy())
-    else:
-        sub(line, line.copy())
-
-io.save()
-# io.open_aegisub()
-# io.open_mpv(video_start='00: 00: 00')"
+      "from pyonfx import Ass, Convert, FrameUtility, Line, Utils",
+      "",
+      "io = Ass(\"ktime.ass\")",
+      "meta, styles, lines = io.get_data()",
+      "",
+      "",
+      "def romaji(line: Line, ln: Line) -> None:",
+      "\tfor syl in Utils.all_non_empty(line.syls):",
+      "\t\t${0:pass}",
+      "\t\t# Lead in",
+      "",
+      "\t\t# Main Effect",
+      "",
+      "\t\t# Leadout",
+      "",
+      "",
+      "def sub(line: Line, ln: Line) -> None:",
+      "\tfor syl in Utils.all_non_empty(line.syls):",
+      "\t\tpass",
+      "\t\t# Lead in",
+      "",
+      "\t\t# Main Effect",
+      "",
+      "\t\t# Leadout",
+      "",
+      "",
+      "for line in lines:",
+      "\t# Generating lines",
+      "\tif line.styleref.alignment >= 7:",
+      "\t\tromaji(line, line.copy())",
+      "\telse:",
+      "\t\tsub(line, line.copy())",
+      "",
+      "io.save()",
+      "# io.open_aegisub()",
+      "# io.open_mpv(video_start='00: 00: 00')"
     ],
     "description": "pyonfx"
   },
   "effect": {
     "prefix": "effect",
     "body": [
-"ln.start_time = line.start_time + $1
-ln.end_time = line.end_time + $2
-ln.duration = ln.end_time - ln.start_time
-
-ln.text = (\"$3%s\") % (
-  syl.text,
-)
-io.write_line(ln)"
+      "ln.start_time = line.start_time + $1",
+      "ln.end_time = line.end_time + $2",
+      "ln.duration = ln.end_time - ln.start_time",
+      "",
+      "ln.text = (\"$3%s\") % (",
+      "\tsyl.text,",
+      ")",
+      "io.write_line(ln)"
     ],
     "description": "pyon effect"
   }
