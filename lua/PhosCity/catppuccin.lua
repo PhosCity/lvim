@@ -3,13 +3,38 @@ if not status_ok then
 	return
 end
 
-vim.g.catppuccin_flavour = "macchiato"
-
--- When running pywal, a script changesthe background color only to what pywal generates by using following override
 catppuccin.setup({
+	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	color_overrides = {
-		all = {
-			base = "#12121a",
+		mocha = {
+			-- Pywal changes the color here everytime it's run.
+			base = "#092E39",
+		},
+	},
+	highlight_overrides = {
+		mocha = function(mocha)
+			return {
+				NvimTreeNormal = { bg = mocha.none },
+				CmpBorder = { fg = mocha.surface2 },
+			}
+		end,
+	},
+	integrations = {
+		treesitter = true,
+		nvimtree = true,
+		lsp_saga = true,
+		cmp = true,
+		illuminate = true,
+		fidget = true,
+		lsp_trouble = true,
+		notify = true,
+		ts_rainbow = true,
+		mason = true,
+		lightspeed = true,
+		gitsigns = true,
+		navic = {
+			enabled = true,
+			custom_bg = "NONE",
 		},
 	},
 })
