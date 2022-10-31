@@ -1,5 +1,6 @@
 lvim.plugins = {
 	"p00f/nvim-ts-rainbow",
+	"junegunn/vim-easy-align",
 	{
 		"leafo/moonscript-vim",
 		ft = { "moon" },
@@ -25,6 +26,7 @@ lvim.plugins = {
 			require("todo-comments").setup()
 		end,
 	},
+
 	{
 		"folke/zen-mode.nvim",
 		config = function()
@@ -33,7 +35,13 @@ lvim.plugins = {
 	},
 
 	-- Misc
-	{ "ggandor/lightspeed.nvim", event = "BufReadPost" },
+	{
+		"ggandor/leap.nvim",
+		event = "BufReadPost",
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+	},
 
 	{
 		"j-hui/fidget.nvim",
