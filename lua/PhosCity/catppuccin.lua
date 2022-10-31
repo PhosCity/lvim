@@ -30,7 +30,7 @@ catppuccin.setup({
 		notify = true,
 		ts_rainbow = true,
 		mason = true,
-		lightspeed = true,
+		leap = true,
 		gitsigns = true,
 		navic = {
 			enabled = true,
