@@ -3,7 +3,6 @@
 lvim.log.level = "warn"
 lvim.colorscheme = "catppuccin"
 lvim.builtin.bufferline.active = true
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -40,3 +39,4 @@ lvim.builtin.bufferline.highlights = require("catppuccin.groups.integrations.buf
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
+vim.opt.conceallevel = 1

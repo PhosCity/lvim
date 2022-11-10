@@ -35,6 +35,7 @@ lvim.plugins = {
 	},
 
 	-- Misc
+	{ "chikamichi/mediawiki.vim", ft = { "mediawiki" } },
 	{
 		"ggandor/leap.nvim",
 		event = "BufReadPost",

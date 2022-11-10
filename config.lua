@@ -1,9 +1,9 @@
 -- General
-require("PhosCity.options")
-require("PhosCity.plugins")
-require("PhosCity.lsp")
-require("PhosCity.keymaps")
+reload("PhosCity.options")
+reload("PhosCity.plugins")
+reload("PhosCity.lsp")
+reload("PhosCity.keymaps")
 
 -- Plugins setup
-require("PhosCity.whichkey")
-require("PhosCity.catppuccin")
+reload("PhosCity.whichkey")
+reload("PhosCity.catppuccin")
