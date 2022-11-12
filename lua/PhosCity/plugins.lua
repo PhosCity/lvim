@@ -1,6 +1,8 @@
 lvim.plugins = {
 	"p00f/nvim-ts-rainbow",
+
 	"junegunn/vim-easy-align",
+
 	{
 		"leafo/moonscript-vim",
 		ft = { "moon" },
@@ -29,18 +31,40 @@ lvim.plugins = {
 
 	{
 		"folke/zen-mode.nvim",
+		cmd = "ZenMode",
 		config = function()
-			require("zen-mode").setup()
+			require("PhosCity.zen-mode")
+		end,
+	},
+
+	{
+		"folke/twilight.nvim",
+		cmd = "Twilight",
+		config = function()
+			require("twilight").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
 		end,
 	},
 
 	-- Misc
 	{ "chikamichi/mediawiki.vim", ft = { "mediawiki" } },
+
 	{
 		"ggandor/leap.nvim",
 		event = "BufReadPost",
 		config = function()
 			require("leap").add_default_mappings()
+		end,
+	},
+
+	{
+		"ggandor/leap-spooky.nvim",
+		event = "BufReadPost",
+		config = function()
+			require("leap-spooky").setup()
 		end,
 	},
 
