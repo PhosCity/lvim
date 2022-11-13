@@ -13,6 +13,9 @@ lvim.plugins = {
 		"catppuccin/nvim",
 		as = "catppuccin",
 		run = ":CatppuccinCompile",
+		config = function()
+			require("PhosCity.catppuccin")
+		end,
 	},
 
 	-- folke
@@ -41,11 +44,7 @@ lvim.plugins = {
 		"folke/twilight.nvim",
 		cmd = "Twilight",
 		config = function()
-			require("twilight").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
+			require("twilight").setup()
 		end,
 	},
 
