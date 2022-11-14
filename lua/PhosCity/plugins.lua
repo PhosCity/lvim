@@ -1,7 +1,7 @@
 lvim.plugins = {
 	"p00f/nvim-ts-rainbow",
 
-	"junegunn/vim-easy-align",
+	{ "junegunn/vim-easy-align", cmd = "EasyAlign" },
 
 	{
 		"leafo/moonscript-vim",
@@ -172,7 +172,7 @@ lvim.plugins = {
 		ft = { "tex" },
 		config = function()
 			vim.g.vimtex_view_method = "zathura"
-			vim.g.tex_flavor = "latex"
+			vim.g.vimtex_quickfix_enabled = 0
 		end,
 	},
 
