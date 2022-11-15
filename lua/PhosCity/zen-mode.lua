@@ -24,13 +24,13 @@ zen_mode.setup({
 		twilight = { enabled = true },
 	},
 	on_open = function()
-		lvim.builtin.cmp.active = false
 		lvim.builtin.breadcrumbs.active = false
-		vim.cmd([[LspStop]])
+		-- lvim.builtin.cmp.active = false
+		-- vim.cmd([[LspStop]])
 	end,
 	on_close = function()
 		lvim.builtin.breadcrumbs.active = true
-		lvim.builtin.cmp.active = true
-		vim.cmd([[LspStart]])
+		-- lvim.builtin.cmp.active = true
+		-- vim.cmd([[LspStart]])
 	end,
 })

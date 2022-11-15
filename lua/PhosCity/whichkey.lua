@@ -19,8 +19,8 @@ lvim.builtin.which_key.mappings["s"] = {
 
 lvim.builtin.which_key.mappings["f"] = {
 	name = "Find",
-	f = { "<cmd>Telescope find_files theme=ivy<cr>", "Find files" },
-	t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	f = { "<cmd>Telescope find_files<cr>", "Find files" },
+	t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 	s = { "<cmd>Telescope grep_string<cr>", "Find String" },
 	r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
 }
