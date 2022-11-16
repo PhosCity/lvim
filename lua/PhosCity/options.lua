@@ -31,7 +31,6 @@ lvim.builtin.alpha.dashboard.section.header.val = {
 }
 
 -- Bufferline
--- lvim.builtin.bufferline.highlights = require("catppuccin.groups.integrations.bufferline").get()
 lvim.builtin.bufferline.options.numbers = function(opts)
 	return string.format("%s", opts.ordinal)
 end

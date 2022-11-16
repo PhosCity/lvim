@@ -8,7 +8,7 @@ catppuccin.setup({
 	color_overrides = {
 		mocha = {
 			-- Pywal changes the color here everytime it's run.
-			base = "#092E39",
+			base = "#131115",
 		},
 	},
 	highlight_overrides = {
@@ -38,3 +38,5 @@ catppuccin.setup({
 		},
 	},
 })
+
+lvim.builtin.bufferline.highlights = require("catppuccin.groups.integrations.bufferline").get()
