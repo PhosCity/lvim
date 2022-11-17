@@ -1,5 +1,6 @@
+local on_file_open = { "BufRead", "BufWinEnter", "BufNewFile" }
 lvim.plugins = {
-	"p00f/nvim-ts-rainbow",
+	{ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" },
 
 	{ "junegunn/vim-easy-align", cmd = "EasyAlign" },
 
@@ -12,7 +13,6 @@ lvim.plugins = {
 	{
 		"catppuccin/nvim",
 		as = "catppuccin",
-		run = ":CatppuccinCompile",
 		config = function()
 			require("PhosCity.catppuccin")
 		end,
@@ -26,7 +26,7 @@ lvim.plugins = {
 
 	{
 		"folke/todo-comments.nvim",
-		event = "BufRead",
+		event = on_file_open,
 		config = function()
 			require("todo-comments").setup()
 		end,
@@ -53,7 +53,7 @@ lvim.plugins = {
 
 	{
 		"ggandor/leap.nvim",
-		event = "BufReadPost",
+		event = on_file_open,
 		config = function()
 			require("leap").add_default_mappings()
 		end,
@@ -61,7 +61,7 @@ lvim.plugins = {
 
 	{
 		"ggandor/leap-spooky.nvim",
-		event = "BufReadPost",
+		event = on_file_open,
 		config = function()
 			require("leap-spooky").setup()
 		end,
@@ -69,6 +69,7 @@ lvim.plugins = {
 
 	{
 		"j-hui/fidget.nvim",
+		event = on_file_open,
 		config = function()
 			require("fidget").setup()
 		end,
@@ -95,6 +96,7 @@ lvim.plugins = {
 
 	{
 		"NvChad/nvim-colorizer.lua",
+		event = on_file_open,
 		config = function()
 			require("colorizer").setup({
 				filetypes = {
@@ -128,6 +130,7 @@ lvim.plugins = {
 
 	{
 		"ja-ford/delaytrain.nvim",
+		event = on_file_open,
 		config = function()
 			require("delaytrain").setup({
 				grace_period = 2,
@@ -140,6 +143,7 @@ lvim.plugins = {
 
 	{
 		"smjonas/live-command.nvim",
+		event = on_file_open,
 		-- live-command supports semantic versioning via tags
 		-- tag = "1.*",
 		config = function()
