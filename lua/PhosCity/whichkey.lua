@@ -2,6 +2,7 @@
 lvim.builtin.which_key.setup.icons.group = "+"
 
 lvim.builtin.which_key.mappings["w"] = {}
+lvim.builtin.which_key.mappings["c"] = {}
 
 lvim.builtin.which_key.mappings["gf"] = {
 	"<cmd>Telescope git_files<cr>",
@@ -36,16 +37,6 @@ lvim.builtin.which_key.mappings["f"] = {
 	t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 	s = { "<cmd>Telescope grep_string<cr>", "Find String" },
 	r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-}
-
-lvim.builtin.which_key.mappings["d"] = {
-	name = "Diagnostics",
-	t = { "<cmd>TroubleToggle<cr>", "trouble" },
-	w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
-	d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
-	q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
-	l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-	r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 }
 
 lvim.builtin.which_key.mappings["t"] = {

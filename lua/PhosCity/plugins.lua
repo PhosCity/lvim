@@ -19,10 +19,6 @@ lvim.plugins = {
 	},
 
 	-- folke
-	{
-		"folke/trouble.nvim",
-		cmd = "TroubleToggle",
-	},
 
 	{
 		"folke/todo-comments.nvim",
