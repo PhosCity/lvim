@@ -8,6 +8,7 @@ lvim.builtin.breadcrumbs.active = true
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.dap.active = false
 lvim.builtin.cmp.completion = { completion = { completeopt = "menu,menuone, noinsert" } }
+lvim.builtin.indentlines.options.char = "┊"
 
 -- Dashboard
 lvim.builtin.alpha.active = true
