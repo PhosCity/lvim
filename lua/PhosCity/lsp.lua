@@ -11,8 +11,8 @@ lvim.builtin.treesitter.ensure_installed = {
 	"json",
 	"org",
 	"markdown",
+	"latex",
 }
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.treesitter.rainbow.enable = true
-

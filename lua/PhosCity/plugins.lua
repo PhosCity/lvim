@@ -13,6 +13,7 @@ lvim.plugins = {
 	{
 		"catppuccin/nvim",
 		as = "catppuccin",
+		run = ":CatppuccinCompile",
 		config = function()
 			require("PhosCity.catppuccin")
 		end,
@@ -176,7 +177,17 @@ lvim.plugins = {
 		end,
 	},
 
-	{ "jbyuki/nabla.nvim", ft = { "tex" } },
+	{ "jbyuki/nabla.nvim", ft = { "tex", "norg" } },
+
+	-- Neorg
+	{
+		"nvim-neorg/neorg",
+		ft = "norg",
+		run = ":Neorg sync-parsers",
+		config = function()
+			require("PhosCity.neorg")
+		end,
+	},
 
 	-- Orgmode
 	{

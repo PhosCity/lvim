@@ -1,6 +1,11 @@
 -- The font I used overlapped with the text
 lvim.builtin.which_key.setup.icons.group = "+"
 
+lvim.builtin.which_key.setup.plugins.presets.z = true
+lvim.builtin.which_key.setup.plugins.presets.g = true
+lvim.builtin.which_key.setup.plugins.registers = true
+lvim.builtin.which_key.setup.plugins.marks = true
+
 lvim.builtin.which_key.mappings["w"] = {}
 lvim.builtin.which_key.mappings["c"] = {}
 
