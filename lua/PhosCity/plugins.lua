@@ -1,6 +1,8 @@
 local on_file_open = { "BufRead", "BufWinEnter", "BufNewFile" }
 lvim.plugins = {
-	-- Colorscheme
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ Colorscheme                                              │
+	-- ╰──────────────────────────────────────────────────────────╯
 	{
 		"catppuccin/nvim",
 		as = "catppuccin",
@@ -10,7 +12,10 @@ lvim.plugins = {
 		end,
 	},
 
-	-- folke
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ folke                                                    │
+	-- ╰──────────────────────────────────────────────────────────╯
+
 	-- Highlight, list and search todo comments in your projects
 	{
 		"folke/todo-comments.nvim",
@@ -36,7 +41,10 @@ lvim.plugins = {
 		end,
 	},
 
-	-- Ggandor
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ Ggandor                                                  │
+	-- ╰──────────────────────────────────────────────────────────╯
+
 	-- motion plugin for Neovim
 	{
 		"ggandor/leap.nvim",
@@ -63,7 +71,9 @@ lvim.plugins = {
 		end,
 	},
 
-	-- Misc
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ Miscellaneous                                            │
+	-- ╰──────────────────────────────────────────────────────────╯
 
 	-- Rainbow parentheses for neovim using tree-sitter
 	{ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" },
@@ -89,7 +99,7 @@ lvim.plugins = {
 	-- Smooth scrolling neovim plugin
 	{
 		"karb94/neoscroll.nvim",
-		event = "WinScrolled",
+		keys = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
 		config = function()
 			require("neoscroll").setup({
 				-- All these keys will be mapped to their corresponding default scrolling animation
@@ -109,8 +119,7 @@ lvim.plugins = {
 	-- A high-performance color highlighter for Neovim
 	{
 		"NvChad/nvim-colorizer.lua",
-		-- ft = { "css", "scss", "html" },
-		event = on_file_open,
+		cmd = "ColorizerToggle",
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -133,7 +142,7 @@ lvim.plugins = {
 	-- Text editing in Neovim with immediate visual feedback
 	{
 		"smjonas/live-command.nvim",
-		cmd = "Norm",
+		event = on_file_open,
 		config = function()
 			require("live-command").setup({
 				commands = {
@@ -146,6 +155,9 @@ lvim.plugins = {
 	-- Flow state reading in neovim
 	{ "nullchilly/fsread.nvim", cmd = "FSToggle" },
 
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ Ass                                                      │
+	-- ╰──────────────────────────────────────────────────────────╯
 	-- for editing .ass subtitle files
 	{
 		"arch1t3cht/ass.nvim",
@@ -161,7 +173,10 @@ lvim.plugins = {
 		end,
 	},
 
-	-- Latex
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ Latex                                                    │
+	-- ╰──────────────────────────────────────────────────────────╯
+
 	-- A modern Vim and neovim filetype plugin for LaTeX files.
 	{
 		"lervag/vimtex",
@@ -172,7 +187,10 @@ lvim.plugins = {
 		end,
 	},
 
-	-- Neorg
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ Neorg                                                    │
+	-- ╰──────────────────────────────────────────────────────────╯
+
 	-- Reimagining org mode for neovim
 	{
 		"nvim-neorg/neorg",
@@ -187,7 +205,10 @@ lvim.plugins = {
 	-- Take your scentific notes in Neovim.
 	{ "jbyuki/nabla.nvim", ft = { "tex", "norg" } },
 
-	-- Orgmode
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ Orgmode                                                  │
+	-- ╰──────────────────────────────────────────────────────────╯
+
 	-- Org-mode for neovim
 	{
 		"nvim-orgmode/orgmode",
