@@ -1,14 +1,5 @@
 local on_file_open = { "BufRead", "BufWinEnter", "BufNewFile" }
 lvim.plugins = {
-	{ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" },
-
-	{ "junegunn/vim-easy-align", cmd = "EasyAlign" },
-
-	{
-		"leafo/moonscript-vim",
-		ft = { "moon" },
-	},
-
 	-- Colorscheme
 	{
 		"catppuccin/nvim",
@@ -20,7 +11,7 @@ lvim.plugins = {
 	},
 
 	-- folke
-
+	-- Highlight, list and search todo comments in your projects
 	{
 		"folke/todo-comments.nvim",
 		event = on_file_open,
@@ -28,7 +19,7 @@ lvim.plugins = {
 			require("todo-comments").setup()
 		end,
 	},
-
+	-- Distraction-free coding for Neovim
 	{
 		"folke/zen-mode.nvim",
 		cmd = "ZenMode",
@@ -36,7 +27,7 @@ lvim.plugins = {
 			require("PhosCity.zen-mode")
 		end,
 	},
-
+	-- dims inactive portions of the code using TreeSitter.
 	{
 		"folke/twilight.nvim",
 		cmd = "Twilight",
@@ -45,9 +36,8 @@ lvim.plugins = {
 		end,
 	},
 
-	-- Misc
-	{ "chikamichi/mediawiki.vim", ft = { "mediawiki" } },
-
+	-- Ggandor
+	-- motion plugin for Neovim
 	{
 		"ggandor/leap.nvim",
 		event = on_file_open,
@@ -55,7 +45,7 @@ lvim.plugins = {
 			require("leap").add_default_mappings()
 		end,
 	},
-
+	--  Leap extension that allows for remote operations
 	{
 		"ggandor/leap-spooky.nvim",
 		event = on_file_open,
@@ -63,7 +53,31 @@ lvim.plugins = {
 			require("leap-spooky").setup()
 		end,
 	},
+	-- Leap extension for enhanced f/t motions
+	{
+		"ggandor/flit.nvim",
+		event = on_file_open,
+		-- keys = { "f", "t", "F", "T" },
+		config = function()
+			require("flit").setup()
+		end,
+	},
 
+	-- Misc
+
+	-- Rainbow parentheses for neovim using tree-sitter
+	{ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" },
+
+	-- Vim alignment plugin
+	{ "junegunn/vim-easy-align", cmd = "EasyAlign" },
+
+	-- Syntax highlighting for MediaWiki-based projects, such as Wikipedia.
+	{ "chikamichi/mediawiki.vim", ft = { "mediawiki" } },
+
+	-- Syntax higlighting for moonscript
+	{ "leafo/moonscript-vim", ft = { "moon" } },
+
+	-- UI for nvim-lsp progress
 	{
 		"j-hui/fidget.nvim",
 		event = on_file_open,
@@ -72,6 +86,7 @@ lvim.plugins = {
 		end,
 	},
 
+	-- Smooth scrolling neovim plugin
 	{
 		"karb94/neoscroll.nvim",
 		event = "WinScrolled",
@@ -91,40 +106,17 @@ lvim.plugins = {
 		end,
 	},
 
+	-- A high-performance color highlighter for Neovim
 	{
 		"NvChad/nvim-colorizer.lua",
+		-- ft = { "css", "scss", "html" },
 		event = on_file_open,
 		config = function()
-			require("colorizer").setup({
-				filetypes = {
-					"css",
-					"javascript",
-					"scss",
-					"html",
-				},
-				user_default_options = {
-					RGB = true, -- #RGB hex codes
-					RRGGBB = true, -- #RRGGBB hex codes
-					names = true, -- "Name" codes like Blue or blue
-					RRGGBBAA = false, -- #RRGGBBAA hex codes
-					AARRGGBB = false, -- 0xAARRGGBB hex codes
-					rgb_fn = false, -- CSS rgb() and rgba() functions
-					hsl_fn = false, -- CSS hsl() and hsla() functions
-					css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-					css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-					-- Available modes for `mode`: foreground, background,  virtualtext
-					mode = "background", -- Set the display mode.
-					-- Available methods are false / true / "normal" / "lsp" / "both"
-					-- True is same as normal
-					tailwind = false, -- Enable tailwind colors
-					-- parsers can contain values used in |user_default_options|
-					sass = { enable = false, parsers = { css } }, -- Enable sass colors
-					virtualtext = "■",
-				},
-			})
+			require("colorizer").setup()
 		end,
 	},
 
+	-- Train yourself to stop repeating keys... gently
 	{
 		"ja-ford/delaytrain.nvim",
 		event = on_file_open,
@@ -138,11 +130,10 @@ lvim.plugins = {
 		end,
 	},
 
+	-- Text editing in Neovim with immediate visual feedback
 	{
 		"smjonas/live-command.nvim",
-		event = on_file_open,
-		-- live-command supports semantic versioning via tags
-		-- tag = "1.*",
+		cmd = "Norm",
 		config = function()
 			require("live-command").setup({
 				commands = {
@@ -152,9 +143,10 @@ lvim.plugins = {
 		end,
 	},
 
+	-- Flow state reading in neovim
 	{ "nullchilly/fsread.nvim", cmd = "FSToggle" },
 
-	-- Ass
+	-- for editing .ass subtitle files
 	{
 		"arch1t3cht/ass.nvim",
 		ft = { "ass" },
@@ -170,6 +162,7 @@ lvim.plugins = {
 	},
 
 	-- Latex
+	-- A modern Vim and neovim filetype plugin for LaTeX files.
 	{
 		"lervag/vimtex",
 		ft = { "tex" },
@@ -179,9 +172,8 @@ lvim.plugins = {
 		end,
 	},
 
-	{ "jbyuki/nabla.nvim", ft = { "tex", "norg" } },
-
 	-- Neorg
+	-- Reimagining org mode for neovim
 	{
 		"nvim-neorg/neorg",
 		ft = "norg",
@@ -192,7 +184,11 @@ lvim.plugins = {
 		end,
 	},
 
+	-- Take your scentific notes in Neovim.
+	{ "jbyuki/nabla.nvim", ft = { "tex", "norg" } },
+
 	-- Orgmode
+	-- Org-mode for neovim
 	{
 		"nvim-orgmode/orgmode",
 		ft = { "org" },
@@ -200,6 +196,7 @@ lvim.plugins = {
 			require("PhosCity.orgmode").config()
 		end,
 	},
+	-- Bullet concealer for org mode
 	{
 		"akinsho/org-bullets.nvim",
 		ft = { "org" },
