@@ -152,6 +152,8 @@ lvim.plugins = {
 		end,
 	},
 
+	{ "nullchilly/fsread.nvim", cmd = "FSToggle" },
+
 	-- Ass
 	{
 		"arch1t3cht/ass.nvim",
@@ -183,6 +185,7 @@ lvim.plugins = {
 	{
 		"nvim-neorg/neorg",
 		ft = "norg",
+		after = "nvim-treesitter",
 		run = ":Neorg sync-parsers",
 		config = function()
 			require("PhosCity.neorg")
