@@ -1,6 +1,7 @@
+-- After changing plugin config exit and reopen LunarVim, Run :PackerSync
 lvim.log.level = "warn"
 lvim.colorscheme = "catppuccin"
-lvim.builtin.bufferline.active = true
+lvim.builtin.theme.name = "catppuccin"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -36,6 +37,7 @@ lvim.builtin.alpha.dashboard.section.header.val = {
 }
 
 -- Bufferline
+lvim.builtin.bufferline.active = true
 lvim.builtin.bufferline.options.numbers = function(opts)
 	return string.format("%s", opts.ordinal)
 end
@@ -81,5 +83,6 @@ lvim.builtin.telescope = {
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 0
 vim.opt.wrap = true -- display lines as one long line
+vim.opt.linebreak = true -- do not break line in the middle of a word

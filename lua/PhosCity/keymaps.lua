@@ -1,5 +1,5 @@
-lvim.keys.normal_mode["<S-l>"] = ":bnext<CR>"
-lvim.keys.normal_mode["<S-h>"] = ":bprevious<CR>"
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 -- Resize with arrows
 lvim.keys.normal_mode["<C-Down>"] = ":resize -2<CR>"

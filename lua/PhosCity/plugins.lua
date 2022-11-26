@@ -155,6 +155,9 @@ lvim.plugins = {
 	-- Flow state reading in neovim
 	{ "nullchilly/fsread.nvim", cmd = "FSToggle" },
 
+	-- Dumb automatic fast indentation detection
+	{ "Darazaki/indent-o-matic", event = on_file_open },
+
 	-- ╭──────────────────────────────────────────────────────────╮
 	-- │ Ass                                                      │
 	-- ╰──────────────────────────────────────────────────────────╯

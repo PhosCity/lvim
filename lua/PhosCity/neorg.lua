@@ -8,28 +8,21 @@ local neorg_folder = "~/Documents/neorg/"
 neorg.setup({
 	load = {
 		["core.defaults"] = {},
-		["core.norg.journal"] = {
-			config = {
-				workspace = "journal",
-			},
-		},
 		["core.norg.dirman"] = {
 			config = {
 				workspaces = {
 					work = neorg_folder .. "work",
-					home = neorg_folder .. "home",
-					gtd = neorg_folder .. "gtd",
-					journal = neorg_folder,
+					main = neorg_folder .. "main",
+					gtd = neorg_folder .. "main/gtd",
 				},
 			},
 		},
-		["core.norg.concealer"] = {
+		["core.norg.journal"] = {
 			config = {
-				dim_code_blocks = {
-					enabled = false,
-				},
+				workspace = "main",
 			},
 		},
+		["core.norg.concealer"] = {},
 		["core.norg.completion"] = {
 			config = {
 				engine = "nvim-cmp",

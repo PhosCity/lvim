@@ -8,6 +8,9 @@ lvim.builtin.which_key.setup.plugins.marks = true
 
 lvim.builtin.which_key.mappings["w"] = {}
 lvim.builtin.which_key.mappings["c"] = {}
+lvim.builtin.which_key.mappings["d"] = lvim.builtin.which_key.mappings[";"]
+lvim.builtin.which_key.mappings[";"] = {}
+lvim.builtin.which_key.mappings["/"] = {}
 
 lvim.builtin.which_key.mappings["gf"] = {
 	"<cmd>Telescope git_files<cr>",

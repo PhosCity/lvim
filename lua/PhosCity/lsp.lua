@@ -1,4 +1,4 @@
-lvim.format_on_save = true
+lvim.format_on_save.enabled = true
 lvim.lsp.diagnostics.virtual_text = false
 
 -- Treesitter
