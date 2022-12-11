@@ -155,5 +155,66 @@
       "\twhen $0"
     ],
     "description": "switch"
+  },
+  "LineCollection simple": {
+    "prefix": "lines",
+    "body": [
+      "lines = LineCollection sub, sel",
+      "return if #lines.lines == 0",
+      "$0"
+    ],
+    "description": "line collection without any conditions"
+  },
+  "LineCollection complex": {
+    "prefix": "lines",
+    "body": [
+      "lines = LineCollection sub, sel, ($1) -> $2",
+      "return if #lines.lines == 0",
+      "$0"
+    ],
+    "description": "line collection with conditions"
+  },
+  "LineCollection simple all": {
+    "prefix": "lines",
+    "body": [
+      "ln = LineCollection sub, sel",
+      "return if #ln.lines == 0",
+      "start = ln[1].number - ln[1].humanizedNumber + 1",
+      "sel = [x for x = start, #sub]",
+      "lines = LineCollection sub, sel",
+      "return if #lines.lines == 0",
+      "$0"
+    ],
+    "description": "collect all lines using linecollection without any conditions"
+  },
+  "LineCollection complex all": {
+    "prefix": "lines",
+    "body": [
+      "ln = LineCollection sub, sel",
+      "return if #ln.lines == 0",
+      "start = ln[1].number - ln[1].humanizedNumber + 1",
+      "sel = [x for x = start, #sub]",
+      "lines = LineCollection sub, sel, ($1) -> $2",
+      "return if #lines.lines == 0",
+      "$0"
+    ],
+    "description": "collect all lines using linecollection with conditions"
+  },
+  "LineCollection Runcallback": {
+    "prefix": "lines\\",
+    "body": [
+      "lines\\runCallback (lines, line, i) ->",
+      "\t$0"
+    ],
+    "description": "runcallback for lineCollection"
+  },
+  "LineCollection Runcallback in order": {
+    "prefix": "lines\\",
+    "body": [
+      "lines\\runCallback ((lines, line, i) ->",
+      "\t$0",
+      "), true"
+    ],
+    "description": "runcallback for lineCollection in order"
   }
 }

@@ -197,6 +197,7 @@ lvim.plugins = {
 	-- Reimagining org mode for neovim
 	{
 		"nvim-neorg/neorg",
+		tag = "*",
 		ft = "norg",
 		after = "nvim-treesitter",
 		run = ":Neorg sync-parsers",

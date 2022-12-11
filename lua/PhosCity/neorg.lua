@@ -22,7 +22,11 @@ neorg.setup({
 				workspace = "main",
 			},
 		},
-		["core.norg.concealer"] = {},
+		["core.norg.concealer"] = {
+			config = {
+				folds = true,
+			},
+		},
 		["core.norg.completion"] = {
 			config = {
 				engine = "nvim-cmp",
