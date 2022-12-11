@@ -1,3 +1,8 @@
+vim.opt.spell = true
+vim.opt.conceallevel = 2
+-- lvim.keys.normal_mode["<Tab>"] = "zo"
+-- lvim.keys.normal_mode["<S-Tab>"] = "zc"
+
 lvim.builtin.which_key.mappings["n"] = {
 	name = "Norg",
 	i = { "<Cmd>Neorg inject-metadata<CR>", "Inject Metadata" },

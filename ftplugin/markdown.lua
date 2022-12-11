@@ -1,3 +1,5 @@
+vim.opt.spell = true
+
 require("lvim.lsp.manager").setup("marksman")
 
 local formatters = require("lvim.lsp.null-ls.formatters")

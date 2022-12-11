@@ -1,3 +1,5 @@
+vim.opt.spell = true
+
 lvim.builtin.which_key.mappings["o"] = {
 	name = "Orgmode",
 	a = { "<space>oa", "Open org agenda", noremap = false },
